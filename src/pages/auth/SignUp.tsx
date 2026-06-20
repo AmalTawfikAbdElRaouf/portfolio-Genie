@@ -36,7 +36,7 @@ const SignUp: React.FC = () => {
       return;
     }
     setLoading(true);
-    const { data, error } = await supabase.auth.signUp({
+    const { data: -data, error } = await supabase.auth.signUp({
       email: form.email,
       password: form.password,
       options: {
