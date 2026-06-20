@@ -1,0 +1,156 @@
+.sidebarContainer {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--bg-dark);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0;
+  padding-bottom: 16px;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarMobile {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--bg-dark);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+  z-index: 1100;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.sidebarMobile.open {
+  transform: translateX(0);
+}
+
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1055;
+}
+
+.navLinkCustom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.navLinkCustom:hover {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.navLinkCustomActive {
+  color: var(--purple-main);
+  background: rgba(124, 58, 237, 0.1);
+  border-left-color: var(--purple-main);
+}
+
+.sidebarTopSpacer {
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  background: var(--bg-dark);
+  z-index: 2;
+}
+
+.mainLayout {
+  display: flex;
+}
+
+.mainContent {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  padding: 90px 24px 160px;
+}
+
+@media (max-width: 991px) {
+  .mainContent {
+    margin-left: 0;
+    width: 100%;
+    padding: 80px 16px 180px;
+  }
+
+  .sidebarContainer {
+    display: none;
+  }
+}
+.sidebarBrand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebarBrandAccent {
+  color: var(--purple-main);
+}
+
+.sidebarBrandDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple-main);
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+.createPortfolioLink {
+  display: block;
+  text-decoration: none !important;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.createPortfolioLink:hover {
+  text-decoration: none !important;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+  color: #ef4444;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.45);
+  color: #ef4444;
+}
